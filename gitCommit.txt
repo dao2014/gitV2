@@ -1,0 +1,67 @@
+﻿git init    //创建库
+it add readme.txt   //添加文件
+
+git commit -m "add 3 files."   //提交文件
+
+git status   //查看文件修改状态
+
+git diff file //表示 还没放到缓存区的修改内容
+
+git diff readme.txt    //查看修改什么  如果已经提交的话 是看不到了  
+
+-----版本回退
+
+git reset --hard HEAD~    可以使用数字 代替  ~1 回退的版本
+git reset --hard ID       可以指定版本 包括前面的版本. 只要记住 ID
+
+git log --查看日志
+
+git reflog --查看命令提交日志  可以通过这 回复到前一个版本
+
+版本回退
+
+git log
+
+--回复上一个版本
+--还没commit 之前或者add 之前
+git checkout -- file命令中的--很重要，没有--，就变成了“创建一个新分支”的命令，我们在后面的分支管理中会再次遇到git checkout命令。
+
+
+---撤销缓存区
+$ git reset HEAD readme.txt   --
+
+
+
+---远程库使用
+
+要打开 git bash 进行一下命令
+
+SSH Key：
+
+
+$ ssh-keygen -t rsa -C "a114224589@126.com"
+
+
+---推送 本地库的内容到服务器上
+
+1. 
+$ git remote add origin http://github.com/dao2014/gitV2.git
+
+推送使用 
+
+$ git push -u origin master  //推送本地服务器到远程库
+
+
+---解决 git的乱码问题
+%GIT_HOME%\etc\gitconfig
+
+[gui]
+     encoding = utf-8
+[i18n]
+     commitencoding = gbk
+[svn]
+     pathnameencoding = gbk
+
+
+
+ 
